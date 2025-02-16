@@ -15,19 +15,15 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-        },
-        {
-            test: /\.js$/,
-            use: 'babel-loader'
-          }
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
         ]
     },
     output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
-}
-,
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'index.js',
+    }
+    ,
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
