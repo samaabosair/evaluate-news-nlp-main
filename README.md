@@ -72,12 +72,12 @@ To enhance the user experience, I implemented service workers using Workbox in `
 1. **Build the project for production:**
    ```bash
    npm run build-prod
-```
+
 2. **Start a server to serve the build:**
 
    ```bash
 serve -s dist
-```
+
 
 3. **Open the app in a browser at http://localhost:3000.**
 
