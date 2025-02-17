@@ -66,7 +66,21 @@ I set up the server-side API integration to keep the API key secure. The server 
 ```
 
 ## Service Workers
-To enhance the user experience, I implemented service workers using Workbox in `webpack.prod.js`, allowing the app to function offline.
+To enhance the user experience, I implemented service workers using Workbox in `webpack.prod.js`, enabling the app to function offline.
+
+### How to Test Service Workers:
+1. **Build the project for production:**
+   ```bash
+   npm run build-prod
+
+2. **Start a server to serve the build:**
+   ```bash
+serve -s dist
+
+3. **Open the app in a browser at http://localhost:3000.**
+
+4. **Test offline functionality by disconnecting your internet and refreshing the page. The site should still be accessible, thanks to service worker caching.**
+```
 
 ## Testing
 To ensure reliability, I wrote unit tests using Jest. Run tests with:
