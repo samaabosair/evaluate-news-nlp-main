@@ -10,7 +10,10 @@ function isValidUrl(url) {
 const serverURL = 'http://localhost:8000';
 
 const form = document.getElementById('urlForm');
-form.addEventListener('submit', handleSubmit);
+if (form) {
+    form.addEventListener('submit', handleSubmit);
+}
+
 
 function handleSubmit(event) {
     event.preventDefault();
@@ -21,7 +24,7 @@ function handleSubmit(event) {
     // Validate URL
     if (isValidUrl(formText)) {
         console.log('Valid URL:', formText);
-        
+
         // Send valid URL to the server
         sendDataToServer(formText);
     } else {
@@ -29,11 +32,11 @@ function handleSubmit(event) {
     }
 }
 
-// Function to send valid data to the server
+
 async function sendDataToServer(url) {
     try {
         const response = await fetch(`${serverURL}/analyze-url`, {
-            
+
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -47,8 +50,8 @@ async function sendDataToServer(url) {
         if (data.error) {
             console.error('Error:', data.error);
         } else {
-            console.log("sama",data);
-        displayResults(data);
+            console.log("sama", data);
+            displayResults(data);
         }
     } catch (error) {
         console.error('Error sending data to server:', error);
